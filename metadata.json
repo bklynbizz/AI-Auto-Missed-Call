@@ -1,0 +1,8 @@
+{
+  "name": "Iron Maiden Realty - AI Auto-Callback Platform",
+  "description": "A high-conversion SaaS platform for real estate agents featuring AI-powered auto-dialers, lead capture, and a full-featured admin dashboard.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
