@@ -1,67 +1,213 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MessageSquare } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MessageSquare, ArrowRight, Sparkles } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
+  const footerLinks = {
+    product: [
+      { name: 'Features', href: '/features' },
+      { name: 'Pricing', href: '/pricing' },
+      { name: 'Integrations', href: '/integrations' },
+      { name: 'Request Demo', href: '/demo' },
+    ],
+    resources: [
+      { name: 'Blog', href: '/blog' },
+      { name: 'Help Center', href: '/help' },
+      { name: 'TCPA Compliance', href: '/tcpa' },
+      { name: 'Case Studies', href: '/case-studies' },
+    ],
+    company: [
+      { name: 'About Us', href: '/about' },
+      { name: 'Careers', href: '/careers' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Partners', href: '/partners' },
+    ],
+  };
+
+  const socialLinks = [
+    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Instagram, href: '#', label: 'Instagram' },
+  ];
+
   return (
-    <footer className="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 pt-20 pb-10 px-6">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+    <footer className="relative bg-slate-900 text-white overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
+      </div>
+
+      {/* Newsletter Section */}
+      <div className="relative border-b border-slate-800">
+        <div className="container mx-auto px-6 py-16">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="text-center lg:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                Stay ahead of the competition
+              </h3>
+              <p className="text-slate-400">
+                Get weekly tips on converting more leads with AI-powered callbacks.
+              </p>
+            </div>
+            <div className="w-full lg:w-auto">
+              <form className="flex flex-col sm:flex-row gap-3">
+                <div className="relative">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="w-full sm:w-80 px-5 py-3.5 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                  />
+                </div>
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-6 py-3.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all flex items-center justify-center gap-2"
+                >
+                  Subscribe
+                  <ArrowRight size={18} />
+                </motion.button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer Content */}
+      <div className="relative container mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
+          {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="text-2xl font-extrabold tracking-tight text-blue-600 dark:text-blue-400 mb-6 block">
-              IRON MAIDEN REALTY
+            <Link to="/" className="inline-flex items-center gap-2 mb-6">
+              <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+                IRON MAIDEN
+              </span>
+              <Sparkles size={16} className="text-yellow-500" />
             </Link>
-            <p className="text-slate-500 dark:text-slate-400 max-w-sm mb-8">
+            <p className="text-slate-400 max-w-sm mb-8 leading-relaxed">
               The world's first AI callback platform designed exclusively for realtors. Capture every lead, even when you're busy closing.
             </p>
-            <div className="flex space-x-4">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-blue-600 hover:text-white transition-all">
-                  <Icon size={18} />
-                </a>
+            <div className="flex gap-3">
+              {socialLinks.map((social, i) => (
+                <motion.a
+                  key={i}
+                  href={social.href}
+                  aria-label={social.label}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-800 border border-slate-700 hover:bg-blue-600 hover:border-blue-600 transition-colors"
+                >
+                  <social.icon size={18} />
+                </motion.a>
               ))}
             </div>
           </div>
 
+          {/* Product Links */}
           <div>
-            <h4 className="font-bold mb-6">Product</h4>
-            <ul className="space-y-4 text-slate-500 dark:text-slate-400">
-              <li><Link to="/features" className="hover:text-blue-600">Features</Link></li>
-              <li><Link to="/pricing" className="hover:text-blue-600">Pricing</Link></li>
-              <li><Link to="/integrations" className="hover:text-blue-600">Integrations</Link></li>
-              <li><Link to="/demo" className="hover:text-blue-600">Request Demo</Link></li>
+            <h4 className="font-bold text-white mb-6">Product</h4>
+            <ul className="space-y-4">
+              {footerLinks.product.map((link, i) => (
+                <li key={i}>
+                  <Link
+                    to={link.href}
+                    className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1 group"
+                  >
+                    {link.name}
+                    <ArrowRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Resources Links */}
           <div>
-            <h4 className="font-bold mb-6">Resources</h4>
-            <ul className="space-y-4 text-slate-500 dark:text-slate-400">
-              <li><Link to="/blog" className="hover:text-blue-600">Blog</Link></li>
-              <li><Link to="/help" className="hover:text-blue-600">Help Center</Link></li>
-              <li><Link to="/tcpa" className="hover:text-blue-600">TCPA Compliance</Link></li>
-              <li><Link to="/case-studies" className="hover:text-blue-600">Case Studies</Link></li>
+            <h4 className="font-bold text-white mb-6">Resources</h4>
+            <ul className="space-y-4">
+              {footerLinks.resources.map((link, i) => (
+                <li key={i}>
+                  <Link
+                    to={link.href}
+                    className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1 group"
+                  >
+                    {link.name}
+                    <ArrowRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Company Links */}
           <div>
-            <h4 className="font-bold mb-6">Contact</h4>
-            <ul className="space-y-4 text-slate-500 dark:text-slate-400">
-              <li className="flex items-center gap-2"><Mail size={16} /> support@ironmaiden.io</li>
-              <li className="flex items-center gap-2"><Phone size={16} /> (555) 123-4567</li>
-              <li className="flex items-center gap-2 font-bold text-blue-600 dark:text-blue-400 cursor-pointer hover:underline">
-                <MessageSquare size={16} /> Live Chat
+            <h4 className="font-bold text-white mb-6">Company</h4>
+            <ul className="space-y-4">
+              {footerLinks.company.map((link, i) => (
+                <li key={i}>
+                  <Link
+                    to={link.href}
+                    className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1 group"
+                  >
+                    {link.name}
+                    <ArrowRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="font-bold text-white mb-6">Contact</h4>
+            <ul className="space-y-4">
+              <li>
+                <a href="mailto:support@ironmaiden.io" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center">
+                    <Mail size={14} />
+                  </div>
+                  support@ironmaiden.io
+                </a>
+              </li>
+              <li>
+                <a href="tel:+15551234567" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center">
+                    <Phone size={14} />
+                  </div>
+                  (555) 123-4567
+                </a>
+              </li>
+              <li>
+                <button className="flex items-center gap-3 text-blue-400 hover:text-blue-300 transition-colors font-semibold">
+                  <div className="w-8 h-8 rounded-lg bg-blue-600/20 flex items-center justify-center">
+                    <MessageSquare size={14} className="text-blue-400" />
+                  </div>
+                  Live Chat
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                </button>
               </li>
             </ul>
           </div>
         </div>
+      </div>
 
-        <div className="mt-20 pt-8 border-t border-slate-200 dark:border-slate-900 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
-          <p>© 2023 Iron Maiden Realty. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="hover:text-blue-600">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-blue-600">Terms of Service</Link>
-            <Link to="/cookie-policy" className="hover:text-blue-600">Cookies</Link>
+      {/* Bottom Bar */}
+      <div className="relative border-t border-slate-800">
+        <div className="container mx-auto px-6 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+            <p>© {currentYear} Iron Maiden Realty. All rights reserved.</p>
+            <div className="flex flex-wrap justify-center gap-6">
+              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookies</Link>
+              <Link to="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
+            </div>
           </div>
         </div>
       </div>
