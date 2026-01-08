@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCMS } from '../context/CMSContext';
-import { Moon, Sun, Menu, X, ChevronRight, Sparkles } from 'lucide-react';
+import { Moon, Sun, Menu, X, ChevronRight } from 'lucide-react';
 
 const Header: React.FC = () => {
   const { config, updateConfig } = useCMS();
@@ -43,23 +43,26 @@ const Header: React.FC = () => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="relative"
             >
-              <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent bg-300% animate-gradient">
-                IRON MAIDEN
-              </span>
-              <motion.div
-                className="absolute -top-1 -right-3"
-                animate={{ rotate: [0, 15, -15, 0] }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-              >
-                <Sparkles size={12} className="text-yellow-500" />
-              </motion.div>
+              <img
+                src="/hindsightx-logo.png"
+                alt="Hindsight X"
+                className="h-10 w-10 object-contain"
+              />
             </motion.div>
+            <div className="flex flex-col">
+              <span className="text-xl font-black tracking-tight bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent bg-300% animate-gradient leading-tight">
+                AGenetic Realtor
+              </span>
+              <span className="text-[10px] font-medium text-slate-500 dark:text-slate-400 tracking-wide">
+                powered by Hindsight X
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

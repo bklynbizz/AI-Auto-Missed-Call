@@ -126,7 +126,7 @@ const FeaturesPage: React.FC = () => {
               variants={fadeInUp}
               className="text-xl text-slate-500 dark:text-slate-400 mb-10 max-w-2xl mx-auto"
             >
-              Traditional auto-dialers are robotic. Iron Maiden uses next-gen LLMs to handle real estate conversations naturally.
+              Traditional auto-dialers are robotic. AGenetic Realtor uses next-gen LLMs to handle real estate conversations naturally.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">

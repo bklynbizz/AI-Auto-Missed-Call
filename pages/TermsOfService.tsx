@@ -10,7 +10,7 @@ const TermsOfService: React.FC = () => {
           <p className="text-lg font-bold">Effective Date: October 2023</p>
           <section>
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">1. Acceptable Use</h2>
-            <p>Iron Maiden Realty provides an AI automation platform for real estate professionals. You agree to use the service in compliance with all local, state, and federal real estate regulations, including TCPA and DNC rules.</p>
+            <p>Hindsight X Inc. provides an AI automation platform for real estate professionals through our AGenetic Realtor service. You agree to use the service in compliance with all local, state, and federal real estate regulations, including TCPA and DNC rules.</p>
           </section>
           <section>
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">2. Subscription & Billing</h2>
@@ -18,7 +18,7 @@ const TermsOfService: React.FC = () => {
           </section>
           <section>
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">3. Limitation of Liability</h2>
-            <p>While our AI is highly accurate, Iron Maiden Realty is not responsible for the specific content of AI-generated conversations or any loss of business resulting from technical interruptions.</p>
+            <p>While our AI is highly accurate, Hindsight X Inc. is not responsible for the specific content of AI-generated conversations or any loss of business resulting from technical interruptions.</p>
           </section>
         </div>
       </div>

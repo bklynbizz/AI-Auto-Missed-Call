@@ -236,7 +236,7 @@ const ContactPage: React.FC = () => {
               >
                 {[
                   { icon: Phone, label: 'Call Us', value: '(888) 555-0123' },
-                  { icon: Mail, label: 'Email', value: 'hello@ironmaiden.ai' },
+                  { icon: Mail, label: 'Email', value: 'hello@hindsightx.com' },
                   { icon: MapPin, label: 'Location', value: 'New York, NY' },
                   { icon: Clock, label: 'Response Time', value: '< 24 hours' }
                 ].map((item, i) => (

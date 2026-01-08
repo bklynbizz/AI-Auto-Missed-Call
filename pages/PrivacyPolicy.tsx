@@ -10,7 +10,7 @@ const PrivacyPolicy: React.FC = () => {
           <p className="text-lg font-bold">Last Updated: October 2023</p>
           <section>
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">1. Data Collection</h2>
-            <p>At Iron Maiden Realty, we prioritize the security and privacy of your real estate data. We collect information necessary to provide our AI callback services, including phone numbers, conversation transcripts, and lead details provided during interactions.</p>
+            <p>At Hindsight X Inc., we prioritize the security and privacy of your real estate data. We collect information necessary to provide our AI callback services, including phone numbers, conversation transcripts, and lead details provided during interactions.</p>
           </section>
           <section>
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">2. How We Use Data</h2>

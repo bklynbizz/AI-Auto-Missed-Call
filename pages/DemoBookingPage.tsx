@@ -9,7 +9,7 @@ const DemoBookingPage: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-20">
           <div className="lg:w-1/3">
             <h1 className="text-4xl font-black mb-6">Schedule a Personalized Demo</h1>
-            <p className="text-lg text-slate-500 mb-10">See how Iron Maiden fits into your specific workflow. 15 minutes is all it takes to transform your lead response game.</p>
+            <p className="text-lg text-slate-500 mb-10">See how AGenetic Realtor fits into your specific workflow. 15 minutes is all it takes to transform your lead response game.</p>
             
             <div className="space-y-8">
               <div className="flex gap-4">

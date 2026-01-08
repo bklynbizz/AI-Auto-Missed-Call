@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MessageSquare, ArrowRight, Sparkles } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MessageSquare, ArrowRight } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -84,11 +84,20 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="inline-flex items-center gap-2 mb-6">
-              <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-                IRON MAIDEN
-              </span>
-              <Sparkles size={16} className="text-yellow-500" />
+            <Link to="/" className="inline-flex items-center gap-3 mb-6">
+              <img
+                src="/hindsightx-logo.png"
+                alt="Hindsight X"
+                className="h-10 w-10 object-contain"
+              />
+              <div className="flex flex-col">
+                <span className="text-xl font-black tracking-tight bg-gradient-to-r from-blue-400 via-blue-300 to-blue-400 bg-clip-text text-transparent leading-tight">
+                  AGenetic Realtor
+                </span>
+                <span className="text-[10px] font-medium text-slate-500 tracking-wide">
+                  powered by Hindsight X
+                </span>
+              </div>
             </Link>
             <p className="text-slate-400 max-w-sm mb-8 leading-relaxed">
               The world's first AI callback platform designed exclusively for realtors. Capture every lead, even when you're busy closing.
@@ -168,11 +177,11 @@ const Footer: React.FC = () => {
             <h4 className="font-bold text-white mb-6">Contact</h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:support@ironmaiden.io" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
+                <a href="mailto:support@hindsightx.com" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
                   <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center">
                     <Mail size={14} />
                   </div>
-                  support@ironmaiden.io
+                  support@hindsightx.com
                 </a>
               </li>
               <li>
@@ -201,7 +210,7 @@ const Footer: React.FC = () => {
       <div className="relative border-t border-slate-800">
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-            <p>© {currentYear} Iron Maiden Realty. All rights reserved.</p>
+            <p>© {currentYear} Hindsight X Inc. All rights reserved.</p>
             <div className="flex flex-wrap justify-center gap-6">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>

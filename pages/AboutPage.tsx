@@ -92,7 +92,7 @@ const AboutPage: React.FC = () => {
               variants={fadeInUp}
               className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 leading-relaxed"
             >
-              Iron Maiden was founded by real estate agents who were tired of losing deals because they were busy doing the work their clients hired them for—being in the field.
+              AGenetic Realtor was founded by real estate agents who were tired of losing deals because they were busy doing the work their clients hired them for—being in the field.
             </motion.p>
           </motion.div>
         </div>
